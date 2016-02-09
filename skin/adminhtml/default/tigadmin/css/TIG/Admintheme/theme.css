@@ -1,0 +1,414 @@
+/**
+ *                  ___________       __            __
+ *                  \__    ___/____ _/  |_ _____   |  |
+ *                    |    |  /  _ \\   __\\__  \  |  |
+ *                    |    | |  |_| ||  |   / __ \_|  |__
+ *                    |____|  \____/ |__|  (____  /|____/
+ *                                              \/
+ *          ___          __                                   __
+ *         |   |  ____ _/  |_   ____ _______   ____    ____ _/  |_
+ *         |   | /    \\   __\_/ __ \\_  __ \ /    \ _/ __ \\   __\
+ *         |   ||   |  \|  |  \  ___/ |  | \/|   |  \\  ___/ |  |
+ *         |___||___|  /|__|   \_____>|__|   |___|  / \_____>|__|
+ *                  \/                           \/
+ *                  ________
+ *                 /  _____/_______   ____   __ __ ______
+ *                /   \  ___\_  __ \ /  _ \ |  |  \\____ \
+ *                \    \_\  \|  | \/|  |_| ||  |  /|  |_| |
+ *                 \______  /|__|    \____/ |____/ |   __/
+ *                        \/                       |__|
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Creative Commons License.
+ * It is available through the world-wide-web at this URL:
+ * http://creativecommons.org/licenses/by-nc-nd/3.0/nl/deed.en_US
+ * If you are unable to obtain it through the world-wide-web, please send an email
+ * to servicedesk@totalinternetgroup.nl so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this module to newer
+ * versions in the future. If you wish to customize this module for your
+ * needs please contact servicedesk@totalinternetgroup.nl for more information.
+ *
+ * @copyright   Copyright (c) 2016 Total Internet Group B.V. (http://www.totalinternetgroup.nl)
+ * @license     http://creativecommons.org/licenses/by-nc-nd/3.0/nl/deed.en_US
+ */
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+body { background: #d9d9d9; }
+a { color: #009f42; }
+a:hover { color: #000; text-decoration: none; }
+/*
+    LOADING INDICATOR
+*******************************************************************/
+#loading-process,
+#loading-mask .loader {
+    background: #f7f7f7;
+    border: 5px solid #0388CC;
+    color: #000;
+    box-shadow: 0 3px 12px #9C9C9C;
+    border-radius: 0;
+}
+.message-popup { background: #0388CC; color: #000; border-radius: 0; box-shadow: 0 5px 21px #ADADAD; }
+.message-popup .message-popup-head h2,
+.message-popup .message-popup-head a { color: #fff; }
+.message-popup .message-popup-content { background: #fff; border-radius: 0; }
+.message-popup .message-popup-content .message-text { color: #000; }
+/*
+    LOGIN
+*******************************************************************/
+body#page-login { display:block !important; font-family: Arial, sans-serif;  overflow-x:hidden !important; }
+body#page-login ul li { list-style-type:none; margin: 0; }
+body#page-login ul { margin: 2px 0 4px 0; padding: 0; }
+body.bg {
+    background:url(../../../images/TIG/Admintheme/tig_banner_mid.jpg) no-repeat center center fixed ;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#page-login {
+    float: left;
+    width: 100%;
+    min-width: 360px;
+    margin:0;
+}
+
+.login-container {
+    margin-top:12%;
+    width: 450px;
+    float: left;
+    height: auto;
+    background: white;
+    padding: 50px 80px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 30px 0 #6B6B6B;
+    position: relative;
+    margin-left: calc(50% - 225px);
+}
+
+.login-container .tig_logo {
+    text-align:center;
+}
+
+.login-container h2 {
+    color: #007bdb;
+    font-weight:300;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+}
+
+/* login form */
+
+.login-form .input-box {
+    width:100%;
+    font-size:14px;
+    box-sizing:border-box;
+    margin-top:30px;
+}
+
+fieldset.login-form {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.login-form .input-box label {
+    font-weight:normal;
+}
+
+.login-form .input-box .input-text {
+    width: 100%;
+    padding: 10px;
+    box-sizing:border-box;
+    margin-top:7px;
+}
+
+.login-form .form-buttons .left {
+    margin-top:20px;
+    color:#007bdb;
+    text-decoration:none;
+    float:left;
+    width:100%;
+    font-size:13px;
+}
+
+.login-form .form-buttons .form-button{
+    float:left;
+    clear:both;
+    margin-top:30px;
+}
+
+.login-form .form-buttons .left:hover {
+    text-decoration:underline;
+}
+
+input.form-button {
+    padding: 12px 30px !important;
+    margin-bottom: 11px;
+    font-size: 15px!important;
+    background: #0d9e43;
+    border: 1px solid #0d9e43;
+}
+
+button.forgot-password {
+    padding: 12px 30px !important;
+    margin-bottom: 11px;
+    font-size: 15px!important;
+    background: #0d9e43;
+    border: 1px solid #0d9e43;
+    margin-top:20px;
+}
+input.form-button:hover, button.forgot-password:hover {
+    background:#0b8539;
+    border: 1px solid #007bdb;
+}
+
+#loginForm{
+    position :relative;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* copyright */
+
+.bottom {
+    text-align: center;
+    float: left;
+    margin-left: calc(50% - 135px);
+    margin-top: 30px;
+}
+.bottom .legal {
+    width:250px;
+    margin: 0 auto;
+    color: white;
+    font-size: 10px;
+}
+
+/* service desk flag */
+
+.login-container a.login-servicedesk {
+    position        :absolute;
+    left            :389px;
+    top             :140px;
+    width           :140px;
+    text-align      :center;
+    background      :#007BDB;
+    box-shadow      :0 -4px 13px 0 #6B6B6B;
+    transform       :rotate(90deg);
+    padding         :10px;
+    color           :white;
+    text-decoration :none;
+}
+.login-container a.login-servicedesk:hover {
+    background:#0067db;
+}
+
+/* validation styling */
+
+#loginForm .validation-advice {
+    clear       :both;
+    min-height  :15px;
+    margin      :7px 0 0 0;
+    background  :none;
+    padding-left : 0;
+    font-size   :.95em;
+    font-weight :normal !important;
+    line-height :1.25em;
+}
+
+/* scalable loginscreen */
+
+@media screen and (max-width: 550px){
+
+    .login-container {
+        margin-top:12%;
+        width: 300px;
+        float: left;
+        height: auto;
+        background: white;
+        padding: 50px 40px;
+        box-sizing: border-box;
+        box-shadow: 0 5px 30px 0 #000000;
+        position: relative;
+        margin-left: calc(50% - 150px);
+    }
+
+    .tig_logo img {
+        width: 140px !important;
+    }
+
+    .bottom {
+        text-align: center;
+        float: left;
+        margin-left: calc(50% - 125px);
+        margin-top: 30px;
+    }
+
+    .login-container a.login-servicedesk {
+        position        :absolute;
+        left            :239px;
+        top             :140px;
+        width           :140px;
+        text-align      :center;
+        background      :#007BDB;
+        box-shadow      :0 -4px 15px 0 #323232;
+        transform       :rotate(90deg);
+        padding         :10px;
+        color           :white;
+        text-decoration :none;
+    }
+
+    input.form-button, button.forgot-password {
+        width:100%;
+        padding: 12px 20px;
+    }
+}
+
+@media screen and (max-width: 400px){
+
+    .login-container {
+        margin-top:12%;
+        width: 250px;
+        float: left;
+        height: auto;
+        background: white;
+        padding: 50px 30px;
+        box-sizing: border-box;
+        box-shadow: 0 5px 30px 0 #000000;
+        position: relative;
+        margin-left: calc(50% - 125px);
+    }
+
+    .login-container a.login-servicedesk {
+        position        :absolute;
+        left            :189px;
+        top             :140px;
+        width           :140px;
+        text-align      :center;
+        background      :#007BDB;
+        box-shadow      :0 -4px 15px 0 #323232;
+        transform       :rotate(90deg);
+        padding         :10px;
+        color           :white;
+        text-decoration :none;
+    }
+
+}
+
+
+/*
+    LAYOUT
+*******************************************************************/
+.header-top { background: #ededed;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2VkZWRlZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkZWRlZGUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top,  #ededed 0%, #ffffff 50%, #dedede 100%); background: -webkit-linear-gradient(top,  #ededed 0%,#ffffff 50%,#dedede 100%); background: linear-gradient(top,  #ededed 0%,#ffffff 50%,#dedede 100%); }
+
+.footer { border-top: 1px solid #fff; background: #b9b9b9;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2I5YjliOSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNkOWQ5ZDkiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, #b9b9b9 0%, #d9d9d9 100%); background: -webkit-linear-gradient(top, #b9b9b9 0%, #d9d9d9 100%); background: linear-gradient(top, #b9b9b9 0%, #d9d9d9 100%); }
+.header-right { color: #555;  }
+.header-right .separator { color: #b4b4b4; }
+/*
+    TEXT
+*******************************************************************/
+.notification-global .label,
+.content-header h3,
+.popup-window .content-header h3,
+.emph,
+.accent,
+ul.tabs a.active span,
+ul.tabs a:hover.active span,
+.grid tr.headings th a:hover { color: #000; }
+.form-list td.scope-label { color: #555; }
+.footer a,
+ul.tabs a,
+ul.tabs a:hover,
+.grid tr.headings th a { color:#000; }
+.grid tr.headings th.no-link { color:#333; }
+#dashboard_diagram_totals .price { color: #249B47; }
+/*
+    BACKGROUND
+*******************************************************************/
+dl.accordion dt,
+.entry-edit .entry-edit-head { background-color: #fff; border-bottom: 1px solid #e4e4e4; }
+ul.tabs,
+ul.tabs a,
+.switcher,
+.order-choose-address,
+.order-save-in-address-book,
+.custom-options .option-header,
+.custom-options .option-box,
+.options-box .option-box,
+.options-box .option-header,
+.address-list li.on { background-color: #f4f4f4; }
+/*ul.tabs a.active span,*/
+/*ul.tabs a:hover.active span,*/
+/*ul.tabs a:hover { background-color: #fff; }*/
+.box,
+/*.entry-edit fieldset,*/
+/*.entry-edit .fieldset { background-color: #f7f7f7; }*/
+/*
+    BORDER
+*******************************************************************/
+.switcher,
+.custom-options .option-box,
+.options-box .option-box,
+ul.tabs,
+.box,
+/*.entry-edit fieldset,*/
+/*.entry-edit .fieldset,*/
+/*.sub-btn-set { border: 1px solid #d0d0d0; }*/
+.options-box .option-title { border-bottom: 1px solid #d0d0d0; }
+.custom-options .option-header { border-bottom: 1em solid #d0d0d0; }
+.options-box .option-header { border-bottom: 1em solid #f7f7f7; }
+ul.tabs a.active { border-right: 1px solid #fff; }
+/*
+    FORM
+*******************************************************************/
+input.input-text, textarea, select { border: 1px solid #a9a9a9; }
+.header-right fieldset input.input-text { border-radius: 4px; padding: 3px 8px; }
+
+/*
+    BUTTON
+*******************************************************************/
+button,
+.form-button { border-color: #0d9e43; background: #0d9e43; color:white; }
+button:hover,
+button:active { background: #0b8539; border: 1px solid #007bdb; }
+button.back,
+button.disabled,
+button.disabled:hover,
+button.disabled:active { border-color: #A7A7A7; background: #A7A7A7;}
+button.back:hover { background: #484848; }
+button.cancel,
+button.delete { border-color: #0d9e43; background: #0d9e43; }
+button.cancel:hover,
+button.delete:hover,
+button.cancel:active,
+button.delete:active { background: #0b8539; border: 1px solid #007bdb; }
+/*
+    TABLE
+*******************************************************************/
+.grid table tfoot tr,
+.grid table.border tfoot tr td  { background: #fff !important; }
+/* ================ */
+ul.config-tabs dt { border-color: #0d9e43; background: #0d9e43; color: #fff; }
+
+/* IE6/7/8 */
+@media \0screen\,screen\9 {
+
+    .login-box button, .login-box .form-button { background: #000000; }
+    .header-top { background: #ededed; }
+    .footer { background: #b9b9b9; }
+    button, .form-button { background:  #0d9e43;  }
+    button.back,
+    button.disabled,
+    button.disabled:hover,
+    button.disabled:active { background: #f7f7f7; }
+    button.cancel,
+    button.delete { background:  #0d9e43;  }
+}

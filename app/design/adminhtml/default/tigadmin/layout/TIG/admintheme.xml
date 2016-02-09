@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+**
+ *                  ___________       __            __
+ *                  \__    ___/____ _/  |_ _____   |  |
+ *                    |    |  /  _ \\   __\\__  \  |  |
+ *                    |    | |  |_| ||  |   / __ \_|  |__
+ *                    |____|  \____/ |__|  (____  /|____/
+ *                                              \/
+ *          ___          __                                   __
+ *         |   |  ____ _/  |_   ____ _______   ____    ____ _/  |_
+ *         |   | /    \\   __\_/ __ \\_  __ \ /    \ _/ __ \\   __\
+ *         |   ||   |  \|  |  \  ___/ |  | \/|   |  \\  ___/ |  |
+ *         |___||___|  /|__|   \_____>|__|   |___|  / \_____>|__|
+ *                  \/                           \/
+ *                  ________
+ *                 /  _____/_______   ____   __ __ ______
+ *                /   \  ___\_  __ \ /  _ \ |  |  \\____ \
+ *                \    \_\  \|  | \/|  |_| ||  |  /|  |_| |
+ *                 \______  /|__|    \____/ |____/ |   __/
+ *                        \/                       |__|
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Creative Commons License.
+ * It is available through the world-wide-web at this URL:
+ * http://creativecommons.org/licenses/by-nc-nd/3.0/nl/deed.en_US
+ * If you are unable to obtain it through the world-wide-web, please send an email
+ * to servicedesk@totalinternetgroup.nl so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this module to newer
+ * versions in the future. If you wish to customize this module for your
+ * needs please contact servicedesk@totalinternetgroup.nl for more information.
+ *
+ * @copyright   Copyright (c) 2016 Total Internet Group B.V. (http://www.totalinternetgroup.nl)
+ * @license     http://creativecommons.org/licenses/by-nc-nd/3.0/nl/deed.en_US
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <reference name="head">
+            <action method="removeItem"><type>skin_css</type><name>boxes.css</name></action>
+            <action method="removeItem"><type>skin_css</type><name>menu.css</name></action>
+            <action method="addCss"><name>css/TIG/Admintheme/theme.css</name></action>
+            <action method="addCss"><name>css/TIG/Admintheme/boxes.css</name></action>
+            <action method="addCss"><name>css/TIG/Admintheme/menu.css</name></action>
+            <action method="addJS"><name>lib/jquery/jquery-1.10.2.min.js</name></action>
+            <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
+            <action method="addJS"><name>lib/jquery/jquery.menu-aim.js</name></action>
+        </reference>
+    </default>
+
+    <adminhtml_index_login>
+    	<reference name="content">
+    		<action method="setTemplate">
+    			<template>TIG/Admintheme/login.phtml</template>
+    		</action>
+    	</reference>
+    </adminhtml_index_login>
+
+    <adminhtml_index_forgotpassword>
+    	<reference name="content">
+    		<action method="setTemplate">
+    			<template>TIG/Admintheme/forgotpassword.phtml</template>
+    		</action>
+    	</reference>
+    </adminhtml_index_forgotpassword>
+</layout>

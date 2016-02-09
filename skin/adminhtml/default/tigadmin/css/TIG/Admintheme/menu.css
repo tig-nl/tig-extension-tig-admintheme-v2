@@ -1,0 +1,380 @@
+/**
+ *                  ___________       __            __
+ *                  \__    ___/____ _/  |_ _____   |  |
+ *                    |    |  /  _ \\   __\\__  \  |  |
+ *                    |    | |  |_| ||  |   / __ \_|  |__
+ *                    |____|  \____/ |__|  (____  /|____/
+ *                                              \/
+ *          ___          __                                   __
+ *         |   |  ____ _/  |_   ____ _______   ____    ____ _/  |_
+ *         |   | /    \\   __\_/ __ \\_  __ \ /    \ _/ __ \\   __\
+ *         |   ||   |  \|  |  \  ___/ |  | \/|   |  \\  ___/ |  |
+ *         |___||___|  /|__|   \_____>|__|   |___|  / \_____>|__|
+ *                  \/                           \/
+ *                  ________
+ *                 /  _____/_______   ____   __ __ ______
+ *                /   \  ___\_  __ \ /  _ \ |  |  \\____ \
+ *                \    \_\  \|  | \/|  |_| ||  |  /|  |_| |
+ *                 \______  /|__|    \____/ |____/ |   __/
+ *                        \/                       |__|
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Creative Commons License.
+ * It is available through the world-wide-web at this URL:
+ * http://creativecommons.org/licenses/by-nc-nd/3.0/nl/deed.en_US
+ * If you are unable to obtain it through the world-wide-web, please send an email
+ * to servicedesk@totalinternetgroup.nl so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade this module to newer
+ * versions in the future. If you wish to customize this module for your
+ * needs please contact servicedesk@totalinternetgroup.nl for more information.
+ *
+ * @copyright   Copyright (c) 2016 Total Internet Group B.V. (http://www.totalinternetgroup.nl)
+ * @license     http://creativecommons.org/licenses/by-nc-nd/3.0/nl/deed.en_US
+ */
+
+/************** Clearfix  *************/
+.cf:before,
+.cf:after { content: " "; /* 1 */ display: table; /* 2 */ }
+.cf:after { clear: both; }
+
+/** For IE 6/7 only * Include this rule to trigger hasLayout and contain floats. **/
+.cf { *zoom: 1; }
+
+/************** NAVIGATION - ALL LEVELS  *************/ /* Style consistent throughout all nav levels */
+#nav { float: left; }
+#nav li { position: relative; text-align: left; }
+
+/* level 0 vertical menu */
+#nav { width: 100%; }
+#nav * { padding: 0; }
+#nav li { border: 0; padding: 0 !important; width: 100%; }
+
+/* styling text */
+#nav a,
+#nav a:hover { display: block; text-decoration: none; }
+
+#nav a { display: block; width: 100%; text-align: left; font-size:11px; padding: 0 0 0 20px !important;
+         color: #fff !important; text-transform: uppercase; background: none !important; }
+#nav a,
+#nav li,
+#nav ul span,
+#nav ul li.last li span { border: 0 !important; margin: 0 !important; line-height: 2.25rem !important; font-weight: normal !important; }
+
+#nav ul span,
+#nav ul li,
+#nav ul li a,
+#nav ul li.last { color: #fcfcfc; text-transform: none; }
+
+/* default nav hidden on reload */
+.nav-bar ul .submenu-container{ display:none; }
+
+/* variable container columns */
+.submenu-container { position:absolute; margin-left:10rem; min-height:10px; top: 0; }
+.submenu-container.width-1col { width: 15rem; }
+.submenu-container.width-2col { width: 30rem; }
+.submenu-container.width-3col { width: 45rem; }
+.submenu-container.width-4col { width: 60rem; }
+
+.submenu-container .column-0,
+.submenu-container .column-1,
+.submenu-container .column-2,
+.submenu-container .column-3{ float:left; width: 15rem; }
+
+.submenu { display: none !important; }
+.submenu-hover { display: block !important; }
+
+/* submenu container colors */
+.submenu-container { background-color: #464646; } /* level 1 */
+.submenu-container ul ul { background-color: #525252; } /* level 2 */
+.submenu-container ul ul ul { background-color: #6B6B6B; } /* level 3 */
+.submenu-container ul ul ul ul  { background-color: #7D7D7D; } /* level 4 */
+
+#nav li.active { background: #0388cc; padding: 0; border: 0; margin: 0; }
+#nav li:hover { background: #0388cc; }
+
+/* Cursors */
+#nav li.parent a,
+#nav li.parent li.parent a,
+#nav li.parent li.parent li.parent a { cursor: default; }
+
+#nav li.parent li a,
+#nav li.parent li.parent li a,
+#nav li.parent li.parent li.parent li a { cursor: pointer; }
+
+.nav-bar:after { content:"."; display:block; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; zoom: 1; }
+
+
+/************ 1ST LEVEL  ***************/
+#nav .parent.level1 > a:after {
+    content     :' ';
+    width       :0;
+    height      :0;
+    border      :0.3rem solid transparent;
+    border-left :0.3rem solid #999;
+    margin-top  :0.85rem;
+    position    :absolute;
+    right       :0.75rem;
+    top         :0;
+}
+
+#nav li.level1 ul {
+    top: 0;
+    margin-left: 5rem !important;
+    z-index:10;
+    width: 15rem;
+}
+
+/************ 2ND LEVEL ************/
+
+#nav ul a { box-sizing: border-box; }
+#nav ul li:hover a,
+#nav ul li.last { border: 0; }
+
+#nav .parent.level2 > a:after {
+    content     :' ';
+    width       :0;
+    height      :0;
+    border      :0.3rem solid transparent;
+    border-left :0.3rem solid #999;
+    margin-top  :0.85rem;
+    position    :absolute;
+    right       :0.75rem;
+    top         :0;
+}
+
+#nav li.level2 ul {
+    top: 0;
+    margin-left: 5rem !important;
+    display:none;
+}
+
+/************ 3RD+ LEVEL ************/
+
+#nav ul ul  {
+    position:absolute;
+    top: 10px;
+    left: 10rem;
+    border: 0;
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+/************ 4RD+ LEVEL ************/
+
+/* space reservation */
+
+/************* IE9 *************/
+:root #nav ul ul { border: 1px solid #75a433 \0/IE9; }
+
+/************* IE6/7/8 *************/
+@media \0screen\,screen\9 {
+    #nav ul ul  { border: 1px solid #75a433; }
+}
+
+
+
+/************* -- TIG admin theme styling - magento 2 style -- *************/
+
+.middle {
+    background: #fff;
+}
+.wrapper, .content-header-floating {
+    padding-top: 2.75rem;
+    padding-left: 10rem;
+}
+.content-header-floating {
+    background: #f8f8f8;
+    padding-bottom: 12px;
+}
+
+#page-help-link {
+    display: none;
+}
+
+/** general */
+.notification-global {
+    background: #FFFBDB;
+    border: 0;
+    border-bottom: 1px solid #FFFBDB;
+    margin: 7px 0 0 0;
+    padding: 15px 27px;
+}
+.entry-edit {
+    border:none !important;
+}
+
+.entry-edit .entry-edit-head {
+    background: none;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    color: #000;
+}
+.entry-edit .entry-edit-head a,
+.entry-edit .entry-edit-head a.open {
+    border-bottom: 1px solid #ccc;
+    line-height: 1.5rem;
+    padding-bottom: 0.5rem;
+    background: none;
+}
+
+.entry-edit .entry-edit-head .tools a,
+.entry-edit .entry-edit-head .tools a.open {
+    border-bottom: 0;
+    line-height: 1.5rem;
+    padding-bottom: 0.5rem;
+    background: none;
+}
+
+.entry-edit .entry-edit-head .tools a:after,
+.entry-edit .entry-edit-head .tools a:after.open {
+    border:0;
+}
+
+.entry-edit .entry-edit-head a:after {
+    content: ' ';
+    width: 0;
+    height: 0;
+    border: 0.3rem solid transparent;
+    border-top: 0.3rem solid #000;
+    margin-top: 0.65rem;
+    position: absolute;
+    right: 2rem;
+    margin-right: 0.5rem;
+}
+.entry-edit .entry-edit-head a.open:after {
+    content: ' ';
+    width: 0;
+    height: 0;
+    border: 0.3rem solid transparent;
+    border-bottom: 0.3rem solid #000;
+    margin-top: 0.45rem;
+    position: absolute;
+    right: 2rem;
+    margin-right: 0.5rem;
+}
+.entry-edit .entry-edit-head h4 {
+    font-size: 1.25rem;
+    color: #333;
+    line-height: 1.5rem !important;
+}
+.content-header {
+    border: none;
+    margin-bottom: 2.5rem;
+}
+.content-header h3 {
+    font-size: 1.5rem;
+}
+
+.grid tr.headings {
+    background: none;
+}
+.grid tr.headings th, .grid table td {
+    border: 0;
+    padding: 10px;
+    border-bottom: 1px solid #e8e8e8;
+}
+.entry-edit {
+    margin-bottom: 2rem;
+}
+
+.content-header h3, .nowrap, .notification-global .label {
+    color: #249B47 !important;
+}
+.content-header h3 {
+    color: #000 !important;
+    font-size:32px;
+    font-weight:lighter;
+}
+
+a {
+    color: #326179 !important;
+}
+a:hover {
+    color:#000000 !important;
+}
+
+/************* Config Page ************/
+
+.switcher, ul.tabs, ul.tabs a {
+    background: #fafafa;
+}
+ul.tabs a:hover {
+    background: #fcfcfc;
+}
+ul.tabs a.active span {
+    background: #f8f8f8;
+}
+ul.tabs a:hover span {
+    background: #f8f8f8;
+}
+button {
+    background: #0d9e43;
+    border: 1px solid #0d9e43;
+    padding: 0.5rem 1rem !important;
+    text-align: center;
+    min-width: 6rem;
+    display: inline-block !important;
+}
+button:hover {
+    background:#0b8539;
+    border: 1px solid #007bdb;
+}
+button span {
+    display: block;
+}
+ul.config-tabs dt {
+
+    background: #326179 !important;
+    color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: none;
+}
+
+body {
+    background: #f5f5f5;
+}
+.footer {
+    background:#f5f5f5;
+    border-top: 1px solid #e4e4e4;
+    padding: 1.2rem 2.8rem;
+    bottom: 0;
+}
+.footer img {
+    display: none;
+}
+.content-header-floating .form-buttons {
+    padding-top: 0.35rem;
+    padding-right: 9.2rem;
+}
+.content-header .form-buttons button {
+    margin-top: 5px;
+    float: left;
+    margin-bottom: 10px;
+}
+.columns {
+    background: none;
+}
+
+.header .clear{
+    margin:0;
+    border:0;
+}
+
+.clear {
+    border-bottom: 1px solid #e4e4e4;
+    margin: 30px 0;
+}
+
+.filter select {
+    height: auto;
+}
+
+.range .input-text.no-changes {
+    padding: 0;
+}
