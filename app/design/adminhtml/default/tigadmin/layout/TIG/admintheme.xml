@@ -49,6 +49,8 @@
             <action method="addJS"><name>lib/jquery/jquery-1.10.2.min.js</name></action>
             <action method="addJs"><script>lib/jquery/noconflict.js</script></action>
             <action method="addJS"><name>lib/jquery/jquery.menu-aim.js</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/TIG/Admintheme/font-awesome.css</name></action>
+            <action method="addItem"><type>skin_css</type><name>css/TIG/Admintheme/font-awesome.min.css</name></action>
         </reference>
     </default>
 

@@ -45,7 +45,7 @@
 .cf { *zoom: 1; }
 
 /************** NAVIGATION - ALL LEVELS  *************/ /* Style consistent throughout all nav levels */
-#nav { float: left; }
+#nav { float: left; margin-top:50px; }
 #nav li { position: relative; text-align: left; }
 
 /* level 0 vertical menu */
@@ -57,8 +57,8 @@
 #nav a,
 #nav a:hover { display: block; text-decoration: none; }
 
-#nav a { display: block; width: 100%; text-align: left; font-size:11px; padding: 0 0 0 20px !important;
-         color: #fff !important; text-transform: uppercase; background: none !important; }
+#nav a { display: block; width: 100%; text-align: left; font-size:13px; padding: 2px 0 2px 20px !important;
+         color: #fff !important; background: none !important; }
 #nav a,
 #nav li,
 #nav ul span,
@@ -73,7 +73,7 @@
 .nav-bar ul .submenu-container{ display:none; }
 
 /* variable container columns */
-.submenu-container { position:absolute; margin-left:10rem; min-height:10px; top: 0; }
+.submenu-container { position:absolute; margin-left:13rem; min-height:10px; top: 0; }
 .submenu-container.width-1col { width: 15rem; }
 .submenu-container.width-2col { width: 30rem; }
 .submenu-container.width-3col { width: 45rem; }
@@ -107,6 +107,10 @@
 
 .nav-bar:after { content:"."; display:block; clear:both; font-size:0; line-height:0; height:0; overflow:hidden; zoom: 1; }
 
+
+.header-right .super a {
+    color:white !important;
+}
 
 /************ 1ST LEVEL  ***************/
 #nav .parent.level1 > a:after {
@@ -184,9 +188,13 @@
     background: #fff;
 }
 .wrapper, .content-header-floating {
-    padding-top: 2.75rem;
-    padding-left: 10rem;
+  padding-left: 13rem;
 }
+
+#html-body > .footer {
+    padding-left:16rem;
+}
+
 .content-header-floating {
     background: #f8f8f8;
     padding-bottom: 12px;
@@ -201,7 +209,7 @@
     background: #FFFBDB;
     border: 0;
     border-bottom: 1px solid #FFFBDB;
-    margin: 7px 0 0 0;
+
     padding: 15px 27px;
 }
 .entry-edit {
@@ -216,7 +224,7 @@
 }
 .entry-edit .entry-edit-head a,
 .entry-edit .entry-edit-head a.open {
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
     line-height: 1.5rem;
     padding-bottom: 0.5rem;
     background: none;
@@ -277,6 +285,7 @@
     border: 0;
     padding: 10px;
     border-bottom: 1px solid #e8e8e8;
+    font-size:13px;
 }
 .entry-edit {
     margin-bottom: 2rem;
@@ -329,7 +338,7 @@ button span {
 }
 ul.config-tabs dt {
 
-    background: #326179 !important;
+    background: #313131 !important;
     color: #fff;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -344,6 +353,7 @@ body {
     border-top: 1px solid #e4e4e4;
     padding: 1.2rem 2.8rem;
     bottom: 0;
+    /*margin-left:13rem;*/
 }
 .footer img {
     display: none;
@@ -377,4 +387,115 @@ body {
 
 .range .input-text.no-changes {
     padding: 0;
+}
+
+/* font-awesome icon before navigation */
+
+.nav-level-0-dashboard > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f0e4";
+    margin-right: 15px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-sales > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f155";
+    margin-right: 23px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-catalog > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f07c";
+    margin-right: 14px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-customers > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f21d";
+    margin-right: 15px;
+    font-size:21px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-promotions > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f0a1";
+    margin-right: 16px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-newsletter > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f0e0";
+    margin-right: 16px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-cms > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f15b";
+    margin-right: 17px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-reports > a:before {
+    display: inline-block;
+    font: normal normal normal 38px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f15c";
+    margin-right: 17px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
+}
+.nav-level-0-system > a:before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content:"\f013";
+    margin-right: 17px;
+    font-size:18px;
+
+    /*vertical-align:middle;*/
 }
