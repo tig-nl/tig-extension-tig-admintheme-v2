@@ -71,7 +71,11 @@ class TIG_Admintheme_Block_Page_Menu extends Mage_Adminhtml_Block_Page_Menu
                 $html .= '</ul><ul ' . (!$level ? 'id="nav"' : '') . ' class="column-' . $menuColumn . '">' . PHP_EOL;
             }
 
+            $className = 'nav-level-' . $level . '-' . $item['identifier'];
+            $className = Mage::getModel('catalog/product_url')->formatUrlKey($className);
+
             $html .= '<li ' . ' class="'
+                . 'menu-icon ' . $className
                 . (!$level && !empty($item['active']) ? ' active' : '') . ' '
                 . (!empty($item['children']) ? ' parent' : '')
                 . (!empty($level) && !empty($item['last']) ? ' last' : '')
@@ -93,5 +97,67 @@ class TIG_Admintheme_Block_Page_Menu extends Mage_Adminhtml_Block_Page_Menu
         }
 
         return $html;
+    }
+
+    protected function _buildMenuArray(Varien_Simplexml_Element $parent=null, $path='', $level=0)
+    {
+        if (is_null($parent)) {
+            $parent = Mage::getSingleton('admin/config')->getAdminhtmlConfig()->getNode('menu');
+        }
+
+        $parentArr = array();
+        $sortOrder = 0;
+        foreach ($parent->children() as $childName => $child) {
+            if (1 == $child->disabled) {
+                continue;
+            }
+
+            $aclResource = 'admin/' . ($child->resource ? (string)$child->resource : $path . $childName);
+            if (!$this->_checkAcl($aclResource) || !$this->_isEnabledModuleOutput($child)) {
+                continue;
+            }
+
+            if ($child->depends && !$this->_checkDepends($child->depends)) {
+                continue;
+            }
+
+            $menuArr = array();
+
+            $menuArr['label'] = $this->_getHelperValue($child);
+
+            $menuArr['identifier'] = (string)$child->title;
+
+            $menuArr['sort_order'] = $child->sort_order ? (int)$child->sort_order : $sortOrder;
+
+            if ($child->action) {
+                $menuArr['url'] = $this->_url->getUrl((string)$child->action, array('_cache_secret_key' => true));
+            } else {
+                $menuArr['url'] = '#';
+                $menuArr['click'] = 'return false';
+            }
+
+            $menuArr['active'] = ($this->getActive()==$path.$childName)
+                || (strpos($this->getActive(), $path.$childName.'/')===0);
+
+            $menuArr['level'] = $level;
+
+            if ($child->children) {
+                $menuArr['children'] = $this->_buildMenuArray($child->children, $path.$childName.'/', $level+1);
+            }
+            $parentArr[$childName] = $menuArr;
+
+            $sortOrder++;
+        }
+
+        uasort($parentArr, array($this, '_sortMenu'));
+
+        while (list($key, $value) = each($parentArr)) {
+            $last = $key;
+        }
+        if (isset($last)) {
+            $parentArr[$last]['last'] = true;
+        }
+
+        return $parentArr;
     }
 }
