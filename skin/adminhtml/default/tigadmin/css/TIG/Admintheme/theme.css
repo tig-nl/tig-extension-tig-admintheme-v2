@@ -200,6 +200,7 @@ input.form-button:hover, button.forgot-password:hover {
     box-shadow      :0 -4px 13px 0 #6B6B6B;
     transform       :rotate(90deg);
     padding         :10px;
+    font-size:16px;
     color           :white;
     text-decoration :none;
 }
